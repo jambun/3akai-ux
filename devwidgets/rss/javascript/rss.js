@@ -264,9 +264,9 @@ sakai.rss = function(tuid, showSettings){
         }
 
         feedUrl = url;
-
+	
         $.ajax({
-           url : sakai.config.URL.PROXY_RSS +  url,
+           url : sakai.config.URL.PROXY_RSS + encodeURIComponent(url),
            type : "GET",
            success : function(data) {
                 onResponse(printFeed(data));
